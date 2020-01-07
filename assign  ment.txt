@@ -1,0 +1,147 @@
+Automation Assignments:
+
+public class SearchFlipkart&amazon
+{
+public static void main(String[] args) 
+{
+  WebDriver driver = new FirefoxDriver();
+  driver.get("http://www.amazon.com/");
+  driver.manage().window().maximize();
+  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+  Actions act = new Actions(driver);
+  WebElement mainmenu= driver.findElement(By.xpath("//*[@id='fk-mainhead-id']/div[2]/div/div[1]/ul/li[1]/a"));
+  act.moveToElement(mainmenu).build().perform();//taking mouse
+  WebElement mobile = driver.findElement(By.xpath("//*[@id='menu-electronics-tab-0-content']/ul[1]/li[1]/a"));
+  mobiles.click();
+List<WebElement> brands = driver.findElements(By.xpath("//div[@id='list-tagcloud']/div[2]/a"));
+  System.out.println(brands.size());
+  for(int i=0;i<brands.size();i++){
+   System.out.println(brands.get(i).getText());
+   if(brands.get(i).getText().equals("iPhone XR "));
+   {
+    brands.get(i).click();
+   }
+   brands = driver.findElements(By.xpath("//div[@id='list-tagcloud']/div[2]/a"));
+  }
+
+  WebElement searchbox = driver.findElement(By.xpath("//*[@id='searchbox']/li[2]/form/input[4]"));
+  searchbox.sendKeys("iphone XR");//in search box search for grand2
+  driver.findElement(By.xpath("//*[@id='searchbox']/li[2]/form/input[5]")).click();
+ 
+
+driver.get("http://www.flipcart.com/");
+  driver.manage().window().maximize();
+  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+  Actions act = new Actions(driver);
+  WebElement mainmenu= driver.findElement(By.xpath("//*[@id='fk-mainhead-id']/div[2]/div/div[1]/ul/li[1]/a"));
+  act.moveToElement(mainmenu).build().perform();//taking mouse
+  WebElement mobile = driver.findElement(By.xpath("//*[@id='menu-electronics-tab-0-content']/ul[1]/li[1]/a"));
+  mobiles.click();
+List<WebElement> brands = driver.findElements(By.xpath("//div[@id='list-tagcloud']/div[2]/a"));
+  System.out.println(brands.size());
+  for(int i=0;i<brands.size();i++){
+   System.out.println(brands.get(i).getText());
+   if(brands.get(i).getText().equals("iPhone XR "));
+   {
+    brands.get(i).click();
+   }
+   brands = driver.findElements(By.xpath("//div[@id='list-tagcloud']/div[2]/a"));
+  }
+
+  WebElement searchbox = driver.findElement(By.xpath("//*[@id='searchbox']/li[2]/form/input[4]"));
+  searchbox.sendKeys("iphone XR");//in search box search for grand2
+  driver.findElement(By.xpath("//*[@id='searchbox']/li[2]/form/input[5]")).click();
+
+//*********compare two brands*************//
+
+
+Assert.assertEquals(amazonwebsite_prize, flipcartWebsite_prize);
+int status = amazon_prize.compareToIgnoreCase(flipcart_prize);
+if(status==0)
+{
+System.out.println(" Amazon Website is lesser prize");
+}
+else
+{
+System.out.println("Flip cart Website value is lesser prize");
+}
+
+*********************************************************************************************
+@Testest(priority=0)
+public class SearchLoginpage
+{
+ WebDriver driver;
+
+    By user99GuruName = By.name("uid");
+
+    By password99Guru = By.name("password");
+
+    By titleText =By.className("barone");
+
+    By login = By.name("btnLogin");
+
+    public Guru99Login(WebDriver driver){
+
+        this.driver = driver;
+
+ }
+@Testest(priority=1)
+ public void setUserName(String strUserName)
+{
+ driver.findElement(user99GuruName).sendKeys(strUserName);
+ }
+@Testest(priority=2)
+public void setPassword(String strPassword)
+{
+ driver.findElement(password99Guru).sendKeys(strPassword);
+ }
+@Testest(priority=2)
+  public void clickLogin()
+{
+ driver.findElement(login).click();
+ }
+
+  public String getLoginTitle(){
+
+     return    driver.findElement(titleText).getText();
+
+    }
+
+    /**
+
+     * This POM method will be exposed in test case to login in the application
+
+     * @param strUserName
+
+     * @param strPasword
+
+
+
+
+public static void main(String[] args) 
+{
+  WebDriver driver = new FirefoxDriver();
+  driver.get("https://www.tripadvisor.in/");
+  driver.manage().window().maximize();
+  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+  Actions act = new Actions(driver);
+  WebElement mainmenu= driver.findElement(By.xpath("//*[@id='fk-mainhead-id']/div[2]/div/div[1]/ul/li[1]/a"));
+  act.moveToElement(mainmenu).build().perform();//taking mouse
+  WebElement mobile = driver.findElement(By.xpath("//*[@id='menu-electronics-tab-0-content']/ul[1]/li[1]/a"));
+  mobiles.click();
+
+WebElement result= driver.findElement(By.linkText("LocatorValue0"));
+result.click();
+
+WebElement review = driver.findElement(By.linkText("LocatorValue1"));
+review.click();
+}
+
+
+
+
+
+
+
+
+ 
